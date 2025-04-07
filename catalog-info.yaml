@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: qe11kxjlt-python-gitops
+  description: This is GitOps manifest for qe11kxjlt-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=qe11kxjlt-python
+    backstage.io/kubernetes-id: qe11kxjlt-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: qe11kxjlt-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:qe11kxjlt-python
